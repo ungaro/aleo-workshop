@@ -20,8 +20,6 @@ record Token {
     // Token balance of the user.
     balance: u32,
 }
-
-}
 ```
 
 ### **Step Two: Define the Mint Function**
@@ -34,8 +32,6 @@ transition mint(amount: u32) -> Token {
         owner: self.caller,
         balance: amount,
     };
-}
-
 }
 ```
 
@@ -57,7 +53,6 @@ transition transfer(receiver: address, transfer_amount: u32, input: Token) -> (T
     };
 
     return (recipient, sender);
-}
 }
 ```
 
@@ -97,7 +92,6 @@ transition transfer(receiver: address, transfer_amount: u32, input: Token) -> (T
     };
 
     return (recipient, sender);
-}
 }
 ```
 
