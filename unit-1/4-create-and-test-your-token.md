@@ -86,69 +86,37 @@ This is what your `main.leo` file should look like:
 
 ```
 program [your_token_name].aleo {
-
 // Step one: define your token record
-
 record Token {
-
-    // The token owner, any record must be defined with the `owner` field.
-
-    owner: address,
-
-    // Token balance of the user.
-
-    balance: u32,
-
+    // The token owner, any record must be defined with the `owner` field.
+    owner: address,
+    // Token balance of the user.
+    balance: u32,
 }
-
-
 
 // Step two: define mint function
-
 transition mint(amount: u32) -> Token {
-
-    return Token {
-
-        owner: self.caller,
-
-        balance: amount,
-
-    };
-
+    return Token {
+        owner: self.caller,
+        balance: amount,
+    };
 }
-
-
 
 // Step three: define transfer function
-
 transition transfer(receiver: address, transfer_amount: u32, input: Token) -> (Token, Token) {
+    let sender_balance: u32 = input.balance - transfer_amount;
+    let recipient: Token = Token {
+        owner: receiver,
+        balance: transfer_amount,
+    };
 
-    let sender_balance: u32 = input.balance - transfer_amount;
+    let sender: Token = Token {
+        owner: self.caller,
+        balance: sender_balance,
+    };
 
-    let recipient: Token = Token {
-
-        owner: receiver,
-
-        balance: transfer_amount,
-
-    };
-
-
-
-    let sender: Token = Token {
-
-        owner: self.caller,
-
-        balance: sender_balance,
-
-    };
-
-
-
-    return (recipient, sender);
-
+    return (recipient, sender);
 }
-
 }
 ```
 
