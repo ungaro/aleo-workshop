@@ -43,6 +43,8 @@ For more details about how to use `leo` CLI, check out the [Leo Commands Guide.]
 ```bash
 git clone https://github.com/AleoHQ/snarkOS.git --depth 1
 cd snarkOS
+# Switch to the testnet3 branch
+git checkout testnet-beta
 ```
 
 2. **[For Ubuntu users] Run the helper script to install dependencies:**
