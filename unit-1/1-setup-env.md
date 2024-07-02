@@ -83,3 +83,17 @@ Run docker
 ```
 docker run -it 0xaragondocker/leo_docker /bin/bash
 ```
+
+## Windows Installation for Rust 
+
+### Rust Installation
+Rust runs on many platforms, and there are many ways to install Rust. This guide describes installation via rustup, a tool that manages multiple Rust toolchains in a consistent way across all platforms Rust supports. 
+- On Windows, download and run [rustup-init.exe](https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe)
+- rustup-init can be configured interactively, and all options can additionally be controlled by command-line arguments, which can be passed through the shell script. Pass --help to rustup-init as follows to display the arguments rustup-init accepts:
+```
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --help
+```
+- The above command needs to executed using WSL
+- If you prefer not to use the shell script, you may directly download rustup-init for windows [here](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe)
+- verify rust installation by runnin ```rustc --version``` in wsl 
+
