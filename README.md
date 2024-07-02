@@ -1,3 +1,12 @@
+<img alt="workshop" width="1412" src="images/aleo_workshop.png">
+<h3 align="center">📜 A starter guide to build applications on Aleo 📜</h3>
+
+<p align="center">
+    <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/url/https/twitter.com/AleoHQ.svg?style=social&label=Follow%20%40AleoHQ"></a>
+    <a href="https://aleo.org/discord"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
+</p>
+
+
 # leo-intro-course
 
 **Welcome to the "leo-intro-course" repo, your gateway to mastering the Leo language and exploring the Aleo ecosystem.**
