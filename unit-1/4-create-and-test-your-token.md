@@ -84,7 +84,8 @@ transition transfer(receiver: address, transfer_amount: u32, input: Token) -> (T
 
 This is what your `main.leo` file should look like:
 
-```program [your_token_name].aleo {
+```
+program [your_token_name].aleo {
 
 // Step one: define your token record
 
