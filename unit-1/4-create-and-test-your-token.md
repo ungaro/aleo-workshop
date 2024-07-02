@@ -14,6 +14,8 @@ For this demo, our desired features are following:
 Define a token struct with an owner and balance:
 
 ```
+program [your_token_name].aleo {
+// Step one: define your token record
 record Token {
     // The token owner, any record must be defined with the `owner` field.
     owner: address,
