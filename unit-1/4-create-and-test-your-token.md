@@ -158,7 +158,7 @@ Then, test the transfer function to transfer 10 tokens to another address.
 
 1. **Run the Transfer Command:**
 
-```bash
+```
 leo run transfer <recipient's address> 100u64 "<Token Record>"
 
 leo run transfer "{
@@ -170,7 +170,7 @@ leo run transfer "{
 
 2. **Example:**
 
-```bash
+```
 leo run transfer "{
   owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
   balance: 1500u64.private,
@@ -180,7 +180,7 @@ leo run transfer "{
 
 3. **Expected Output:** The output should show two records: one where 10 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
 
-```bash
+```
 ➜  jimmys_token leo run transfer "{
   owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
   balance: 1500u64.private,
