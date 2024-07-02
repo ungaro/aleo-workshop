@@ -5,7 +5,7 @@
 To create a new project, we use the command `leo new <project_name>`
 
 1. **Navigate to the Root Folder**
-   - Ensure you are in the root folder of this `LEO-INTRO-COURSE` repository when you are creating a new project. (You must include your code in the repository for it to be considered finished.)
+   - Ensure you are in the root folder of this `aleo-workshop` repository when you are creating a new project. (You must include your code in the repository for it to be considered finished.)
 2. **Create a New Token Project**
    - In this example, we will create a new token project with a random name:
 
