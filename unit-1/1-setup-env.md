@@ -17,6 +17,7 @@ Note: After installation, if your `git` and `rustc` command don't work, try clos
 # Download the source code
 git clone https://github.com/AleoHQ/leo
 cd leo
+git checkout testnet-beta
 ```
 
 2. **Build and install the `leo` CLI:**
