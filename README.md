@@ -33,9 +33,8 @@ Aleo’s unique approach to privacy and scalability positions it as a leading pl
   - [Basic Data Types & Functions](./unit-1/3-basic-data-types-and-functions.md)
   - [Create and Test Your Token](./unit-1/4-create-and-test-your-token.md) 
   - [Deployment](./unit-1/5-deployment.md)
-  - [CHALLENGE: Build Your Own ARC20!](./unit-1/6-CHALLENGE.md)
 
-- [Unit Two](./unit-2/README.md): Make a simple DEX in Leo
+- [[TODO] Unit Two](./unit-2/README.md): Make a simple DEX in Leo
   - [Offchain & Onchain Executions]()
   - [Working with Private/Public Records]()
   - [Spend, Transfer, Interact with Aleo Credits]()
@@ -88,7 +87,7 @@ Aleo’s unique approach to privacy and scalability positions it as a leading pl
 ## TODO
 
 - [x] Write an Introduction to this page
-- [ ] Add a quick explanatory piece/workshop/article to introduce Leo and how the Aleo blockchain works.
+- [x] Add a quick explanatory piece/workshop/article to introduce Leo and how the Aleo blockchain works.
 - [x] Finish making Unit 1
 - [ ] Finish making Unit 2
 - [ ] Finish making Unit 3
