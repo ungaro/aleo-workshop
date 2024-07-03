@@ -47,7 +47,7 @@ Example output:
 PROGRAM_ID="jimmys_token"
 
 snarkos developer deploy \
---private-key APrivateKey1zkp3CQvmLXAmCyRWyhEVHfpDhY4hzN4E7R5Xw2AAC3dMnNH \
+--private-key [Private Key] \
 --query https://api.explorer.aleo.org/v1 \
 --priority-fee 0 \
 "${PROGRAM_ID}.aleo" \
