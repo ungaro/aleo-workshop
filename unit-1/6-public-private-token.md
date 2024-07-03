@@ -1,4 +1,4 @@
-# 6 Token standard for public and private usage
+# 6. Token standard for public and private usage
 
 In previous sections, we have covered a simple token standard that supports mint and transfer function for private usage. But what if you want to do public transfers and make your balance of a token public?
 
