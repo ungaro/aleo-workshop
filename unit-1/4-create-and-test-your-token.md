@@ -161,11 +161,6 @@ Then, test the transfer function to transfer 10 tokens to another address.
 ```
 leo run transfer <recipient's address> 100u64 "<Token Record>"
 
-leo run transfer "{
-  owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
-  balance: 1500u64.private,
-  _nonce: 639032693423754082364536775069039453230324007423924798412607788930508840691group.public
-}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 100u64
 ```
 
 2. **Example:**
