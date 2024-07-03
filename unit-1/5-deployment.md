@@ -12,6 +12,7 @@ nano deploy.sh
 
 ```bash
 PROGRAM_ID="<Your Token Project Name>"
+
 snarkos developer deploy \
 --private-key <PRIVATEKEY> \
 --query https://api.explorer.aleo.org/v1 \
@@ -39,6 +40,19 @@ Once you get your token for your account, Run the deploy script:
 
 ```bash
 bash ./deploy.sh
+```
+
+Example output: 
+```
+PROGRAM_ID="jimmys_token"
+
+snarkos developer deploy \
+--private-key APrivateKey1zkp3CQvmLXAmCyRWyhEVHfpDhY4hzN4E7R5Xw2AAC3dMnNH \
+--query https://api.explorer.aleo.org/v1 \
+--priority-fee 0 \
+"${PROGRAM_ID}.aleo" \
+--path ./jimmys_token/build/ \
+--broadcast https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast
 ```
 
 ## **Test Mint and Transfer Functions On-Chain**
