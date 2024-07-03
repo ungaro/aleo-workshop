@@ -160,6 +160,7 @@ Then, test the transfer function to transfer 10 tokens to another address.
 
 ```
 leo run transfer <recipient's address> 100u64 "<Token Record>"
+// You can create a new test wallet using `leo new account`
 ```
 
 2. **Example:**
