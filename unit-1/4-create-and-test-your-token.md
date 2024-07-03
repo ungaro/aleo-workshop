@@ -160,7 +160,6 @@ Then, test the transfer function to transfer 10 tokens to another address.
 
 ```
 leo run transfer <recipient's address> 100u64 "<Token Record>"
-
 ```
 
 2. **Example:**
