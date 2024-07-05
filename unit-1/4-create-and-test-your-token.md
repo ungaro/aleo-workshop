@@ -70,7 +70,6 @@ transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
 This is what your `main.leo` file should look like:
 
 ```
-// The 'token_jimito' program.
 program token_jimito.aleo {
     // Step one: define your token record
     record Token {
@@ -80,20 +79,20 @@ program token_jimito.aleo {
         balance: u64,
     }
 
-    // Step two: define the mint function
-    transition mint(owner: address, amount: u64) -> Token {
+    // Step two: define mint function
+    transition mint(amount: u64) -> Token {
         return Token {
-            owner: owner,
+            owner: self.caller,
             balance: amount,
         };
     }
 
-    // Step three: define the transfer function
+    // Step three: define transfer function
     transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
-        // Check the given token record has sufficient balance.
+        // Checks the given token record has sufficient balance.
         // This `sub` operation is safe, and the proof will fail
         // if an overflow occurs.
-        // `difference` holds the change amount to be returned to the sender.
+        // `difference` holds the change amount to be returned to sender.
         let difference: u64 = token.balance - amount;
 
         // Produce a token record with the change amount for the sender.
