@@ -41,29 +41,27 @@ transition mint(amount: u64) -> Token {
 Define a transfer transition that takes a receiver, amount, and token, and returns two token records:
 
 ```
-    // Step three: define transfer function
-    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
-        // Checks the given token record has sufficient balance.
-        // This `sub` operation is safe, and the proof will fail
-        // if an overflow occurs.
-        // `difference` holds the change amount to be returned to sender.
-        let difference: u64 = token.balance - amount;
+transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
+ // Checks the given token record has sufficient balance.
+// This `sub` operation is safe, and the proof will fail
+// if an overflow occurs.
+// `difference` holds the change amount to be returned to sender.
+let difference: u64 = token.balance - amount;
 
-        // Produce a token record with the change amount for the sender.
-        let remaining: Token = Token {
-            owner: token.owner,
-            balance: difference,
-        };
+// Produce a token record with the change amount for the sender.
+let remaining: Token = Token {
+ owner: token.owner,
+ balance: difference,
+ };
 
-        // Produce a token record for the specified receiver.
-        let transferred: Token = Token {
-            owner: to,
-            balance: amount,
-        };
-
-        // Output the sender's change record and the receiver's record.
-        return (remaining, transferred);
-    }
+// Produce a token record for the specified receiver.
+let transferred: Token = Token {
+owner: to,
+balance: amount,
+};
+// Output the sender's change record and the receiver's record.
+return (remaining, transferred);
+}
 ```
 
 ### **Final Step: Overview of Your main.leo File**
