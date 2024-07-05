@@ -153,16 +153,22 @@ Leo ✅ Compiled '[your_token_name].aleo' into Aleo instructions
 
 4. The output should be a record of 100 new tokens.
 ```bash
-➜  token_jimmy leo run mint 100u64
-       Leo ✅ Compiled 'token_jimmy.aleo' into Aleo instructions
+➜  token_jimito leo run mint 100u64
+       Leo ✅ Compiled 'token_jimito.aleo' into Aleo instructions
+
 ⛓  Constraints
- •  'token_jimmy.aleo/mint' - 2,020 constraints (called 1 time)
+
+ •  'token_jimito.aleo/mint' - 2,020 constraints (called 1 time)
+
 ➡️  Output
+
  • {
-  owner: aleo10wf5arfynem5jxgded9hmqdzp6a5th6rywjpvz6acysdtveh7ups5kheyv.private,
+  owner: aleo16l94q9mrfvwddz7mtsla9dsnr6usr580p3tuqu27hff8sfrgcs9s3un3xw.private,
   balance: 100u64.private,
-  _nonce: 7566227514663321013949567218677471616524033529597600501861981761766948707915group.public
+  _nonce: 7866491247063862570923315683237265939712826472158406110725485131341638718073group.public
 }
+
+       Leo ✅ Finished 'token_jimito.aleo/mint'
 ```
 
 ### Test Transfer function
