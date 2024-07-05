@@ -44,20 +44,27 @@ Define a transfer transition that takes a receiver, amount, and token, and retur
 
 ```
     // Step three: define the transfer function
-    transition transfer(receiver: address, transfer_amount: u64, input: Token) -> (Token, Token) {
-        let sender_balance: u64 = input.balance - transfer_amount;
+    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
+        // Checks the given token record has sufficient balance.
+        // This `sub` operation is safe, and the proof will fail
+        // if an overflow occurs.
+        // `difference` holds the change amount to be returned to the sender.
+        let difference: u64 = token.balance - amount;
 
-        let recipient: Token = Token {
-            owner: receiver,
-            balance: transfer_amount,
+        // Produce a token record with the change amount for the sender.
+        let remaining: Token = Token {
+            owner: token.owner,
+            balance: difference,
         };
 
-        let sender: Token = Token {
-            owner: self.caller,
-            balance: sender_balance,
+        // Produce a token record for the specified receiver.
+        let transferred: Token = Token {
+            owner: to,
+            balance: amount,
         };
 
-        return (recipient, sender);
+        // Output the sender's change record and the receiver's record.
+        return (remaining, transferred);
     }
 ```
 
@@ -84,20 +91,27 @@ program token_jimito.aleo {
     }
 
     // Step three: define the transfer function
-    transition transfer(receiver: address, transfer_amount: u64, input: Token) -> (Token, Token) {
-        let sender_balance: u64 = input.balance - transfer_amount;
+    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
+        // Checks the given token record has sufficient balance.
+        // This `sub` operation is safe, and the proof will fail
+        // if an overflow occurs.
+        // `difference` holds the change amount to be returned to the sender.
+        let difference: u64 = token.balance - amount;
 
-        let recipient: Token = Token {
-            owner: receiver,
-            balance: transfer_amount,
+        // Produce a token record with the change amount for the sender.
+        let remaining: Token = Token {
+            owner: token.owner,
+            balance: difference,
         };
 
-        let sender: Token = Token {
-            owner: self.caller,
-            balance: sender_balance,
+        // Produce a token record for the specified receiver.
+        let transferred: Token = Token {
+            owner: to,
+            balance: amount,
         };
 
-        return (recipient, sender);
+        // Output the sender's change record and the receiver's record.
+        return (remaining, transferred);
     }
 }
 ```
