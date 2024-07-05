@@ -41,9 +41,10 @@ For more details about how to use `leo` CLI, check out the [Leo Commands Guide.]
 1. **Clone the `snarkOS` repository: Ensure you are in the root folder**
 
 ```bash
-git clone https://github.com/AleoHQ/snarkOS.git --depth 1
+git clone https://github.com/ProvableHQ/snarkOS.git
 cd snarkOS
-# Switch to the testnet3 branch
+
+# Switch to the testnet-beta branch
 git checkout testnet-beta
 ```
 
