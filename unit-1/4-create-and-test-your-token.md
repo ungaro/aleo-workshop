@@ -173,7 +173,7 @@ Leo ✅ Compiled '[your_token_name].aleo' into Aleo instructions
 
 ### Test Transfer function
 
-Then, test the transfer function to transfer 10 tokens to another address.
+Then, test the transfer function to transfer 25 tokens to another address.
 
 1. **Run the Transfer Command:**
 
@@ -192,7 +192,7 @@ leo run transfer "{
 }" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 100u64
 ```
 
-3. **Expected Output:** The output should show two records: one where 10 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
+3. **Expected Output:** The output should show two records: one where 25 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
 
 ```
 ➜  jimmys_token leo run transfer "{
