@@ -19,7 +19,8 @@ snarkos developer deploy \
 --priority-fee 0 \
 "${PROGRAM_ID}.aleo" \
 --path ./build/ \
---broadcast https://api.explorer.aleo.org/v1/testnet3/transaction/broadcast
+--broadcast https://api.explorer.aleo.org/v1/testnet/transaction/broadcast
+--network 1
 ```
 
 3. **Save the Script**
