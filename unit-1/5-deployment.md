@@ -20,7 +20,6 @@ snarkos developer deploy \
 "${PROGRAM_ID}.aleo" \
 --path ./build/ \
 --broadcast https://api.explorer.aleo.org/v1/testnet/transaction/broadcast
---network 1
 ```
 
 3. **Save the Script**
