@@ -14,13 +14,14 @@ For this demo, our desired features are following:
 Define a token struct with an owner and balance:
 
 ```
-program [your_token_name].aleo {
-record Token {
-    // The token owner, any record must be defined with the `owner` field.
-    owner: address,
-    // Token balance of the user.
-    balance: u64,
-}
+program token_jimito.aleo {
+    // Step one: define your token record
+    record Token {
+        // The token owner, any record must be defined with the `owner` field.
+        owner: address,
+        // Token balance of the user.
+        balance: u64,
+    }
 ```
 
 ### **Step Two: Define the Mint Function**
@@ -28,12 +29,13 @@ record Token {
 Define a mint transition that takes a balance and returns a token record:
 
 ```
-transition mint(amount: u64) -> Token {
-    return Token {
-        owner: self.caller,
-        balance: amount,
-    };
-}
+    // Step two: define mint function
+    transition mint(amount: u64) -> Token {
+        return Token {
+            owner: self.caller,
+            balance: amount,
+        };
+    }
 ```
 
 ### **Step Three: Define the Transfer Function**
