@@ -195,26 +195,31 @@ leo run transfer "{
 3. **Expected Output:** The output should show two records: one where 25 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
 
 ```
-➜  jimmys_token leo run transfer "{
-  owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
-  balance: 1500u64.private,
-  _nonce: 639032693423754082364536775069039453230324007423924798412607788930508840691group.public
-}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 100u64
-       Leo ✅ Compiled 'jimmys_token.aleo' into Aleo instructions
+token_jimito leo run transfer "{
+  owner: aleo16l94q9mrfvwddz7mtsla9dsnr6usr580p3tuqu27hff8sfrgcs9s3un3xw.private,
+  balance: 100u64.private,
+  _nonce: 7866491247063862570923315683237265939712826472158406110725485131341638718073group.public
+}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 25u64
+       Leo ✅ Compiled 'token_jimito.aleo' into Aleo instructions
+
 ⛓  Constraints
- •  'jimmys_token.aleo/transfer' - 4,107 constraints (called 1 time)
+
+ •  'token_jimito.aleo/transfer' - 4,107 constraints (called 1 time)
+
 ➡️  Outputs
+
  • {
-  owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
-  balance: 1400u64.private,
-  _nonce: 4424114868334880030169746461493049325615031800058709267324955395903211085218group.public
+  owner: aleo16l94q9mrfvwddz7mtsla9dsnr6usr580p3tuqu27hff8sfrgcs9s3un3xw.private,
+  balance: 75u64.private,
+  _nonce: 5564054047223494909855000267617287724552224897560459512189989388250299122119group.public
 }
  • {
   owner: aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu.private,
-  balance: 100u64.private,
-  _nonce: 6936545403273828686063939454426257624460129558284896729610681029509905007081group.public
+  balance: 25u64.private,
+  _nonce: 1091633311462665956519582503768472411527844165155556863751507107350855060704group.public
 }
-       Leo ✅ Finished 'jimmys_token.aleo/transfer' (in "/Users/quyen/Desktop/AleoWorkshop/jimmys_token/build")
+
+       Leo ✅ Finished 'token_jimito.aleo/transfer'
 ```
 
 Notes:
