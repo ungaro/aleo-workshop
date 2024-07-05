@@ -33,27 +33,15 @@ cd token_<your_project_name>
 
 ```bash
 leo run main 0u32 1u32 # build & setup & prove & verify
-
-You output should be:
-
-Leo ✅ Compiled 'your_token_name.aleo' into Aleo instructions
-⛓  Constraints
- •'your_token_name.aleo/main' - 33 constraints (called 1 time)
-➡️  Output
- • 1u32
 ```
 
 3. **Expected Output:**
 
 ```
 Leo ✅ Compiled 'your_token_name' into Aleo instructions
-
 ⛓  Constraints
-
  • 'your_token_name.aleo/main' - 33 constraints (called 1 time)
-
 ➡️  Output
-
  • 1u32
 ```
 
