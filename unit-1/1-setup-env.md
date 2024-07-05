@@ -38,7 +38,7 @@ For more details about how to use `leo` CLI, check out the [Leo Commands Guide.]
 
 ## Install snarkOS
 
-1. **Clone the `snarkOS` repository:**
+1. **Clone the `snarkOS` repository: Ensure you are in the root folder**
 
 ```bash
 git clone https://github.com/AleoHQ/snarkOS.git --depth 1
