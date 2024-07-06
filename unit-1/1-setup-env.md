@@ -72,7 +72,6 @@ For more details about how to use `snarkOS` CLI, check out the [snarkOS Installa
 - Compiling Woes: Ensure Rust v1.66+ is installed and use ./run-client.sh or ./run-prover.sh to initiate snarkOS.
 - Connectivity Issues: Check if ports 4133/tcp and 3033/tcp are open. Also, ensure you’ve used the right commands to start snarkOS.
 - Address Generation Issues: Execute source ~/.bashrc before the snarkos account new command. Check your spelling; the directory is /snarkOS, but the command is snarkos.
-- Please make sure you're installing snarkOS and leo from the testnet-beta branch.
 
 
 ## Install `leo` IDE Syntax Highlighting:
