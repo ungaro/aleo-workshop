@@ -16,7 +16,7 @@ Our repo is continuously evolving. Upcoming tasks include completing more advanc
 
 **We're excited to have you here and can't wait to see what you build with Leo!**
 
-## Leo from 0 to Hero
+## Leo from 0 to ZK
 
 ### Preliminaries
 
