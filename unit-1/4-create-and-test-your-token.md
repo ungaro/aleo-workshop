@@ -15,12 +15,12 @@ Define a token struct with an owner and balance:
 
 ```
 program token_jimito.aleo {
-    // Step one: define your token record
+    // The `Token` record datatype.
     record Token {
-        // The token owner, any record must be defined with the `owner` field.
+        // The token owner.
         owner: address,
-        // Token balance of the user.
-        balance: u64,
+        // The token amount.
+        amount: u64,
     }
 ```
 
@@ -29,43 +29,62 @@ program token_jimito.aleo {
 Define a mint transition that takes a balance and returns a token record:
 
 ```
-    // Step two: define mint function
+    // The `mint` function initializes a new record with the
+    // specified number of tokens assigned to the caller.
     transition mint(amount: u64) -> Token {
         return Token {
             owner: self.caller,
-            balance: amount,
+            amount: amount,
         };
     }
 ```
 
 ### **Step Three: Define the Transfer Function**
-
+#### [TASK] (A)
 Define a transfer transition that takes a receiver, amount, and token, and returns two token records:
 
 ```
-    // Step three: define the transfer function
+    // The `transfer` function sends the specified number of tokens
+    // to the receiver from the provided token record.
     transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
         // Checks the given token record has sufficient balance.
         // This `sub` operation is safe, and the proof will fail
         // if an overflow occurs.
-        // `difference` holds the change amount to be returned to the sender.
-        let difference: u64 = token.balance - amount;
+        // `difference` holds the change amount to be returned to sender.
+        let difference: u64 = token.amount - amount;
 
         // Produce a token record with the change amount for the sender.
         let remaining: Token = Token {
             owner: token.owner,
-            balance: difference,
+            amount: difference,
         };
 
         // Produce a token record for the specified receiver.
         let transferred: Token = Token {
             owner: to,
-            balance: amount,
+            amount: amount,
         };
 
         // Output the sender's change record and the receiver's record.
         return (remaining, transferred);
     }
+```
+
+#### [TASK] (B) Define balance_of function
+
+Define the code block which returns the balance of a particular owner addresss given the record. Expected ouput balance in u64
+
+```
+function balance_of(owner_balance: Token) -> u64 {
+    // add your code here
+}
+## Test Program
+
+### Test Mint function
+
+First Test Mint Function.
+```bash
+leo run minT 100u64
 ```
 
 ### **Final Step: Overview of Your main.leo File**
@@ -74,44 +93,56 @@ This is what your `main.leo` file should look like:
 
 ```
 program token_jimito.aleo {
-    // Step one: define your token record
+    // The `Token` record datatype.
     record Token {
-        // The token owner, any record must be defined with the `owner` field.
+        // The token owner.
         owner: address,
-        // Token balance of the user.
-        balance: u64,
+        // The token amount.
+        amount: u64,
     }
 
-    // Step two: define the mint function
+    // The `mint` function initializes a new record with the
+    // specified number of tokens assigned to the caller.
     transition mint(amount: u64) -> Token {
         return Token {
             owner: self.caller,
-            balance: amount,
+            amount: amount,
         };
     }
 
-    // Step three: define the transfer function
+    // The `transfer` function sends the specified number of tokens
+    // to the receiver from the provided token record.
     transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
         // Checks the given token record has sufficient balance.
         // This `sub` operation is safe, and the proof will fail
         // if an overflow occurs.
-        // `difference` holds the change amount to be returned to the sender.
-        let difference: u64 = token.balance - amount;
+        // `difference` holds the change amount to be returned to sender.
+        let difference: u64 = token.amount - amount;
 
         // Produce a token record with the change amount for the sender.
         let remaining: Token = Token {
             owner: token.owner,
-            balance: difference,
+            amount: difference,
         };
 
         // Produce a token record for the specified receiver.
         let transferred: Token = Token {
             owner: to,
-            balance: amount,
+            amount: amount,
         };
 
         // Output the sender's change record and the receiver's record.
         return (remaining, transferred);
+    }
+
+    transition balance_of(owner_balance: Token) -> u64 {
+        let amount_balance: u64 = owner_balance.amount;
+        let minimun: u64 = 0u64;
+        let return_balance:u64 = 0u64;
+        if amount_balance >= minimun{
+            return_balance = amount_balance;
+        }
+        return return_balance;
     }
 }
 ```
@@ -174,7 +205,7 @@ Leo ✅ Compiled '[your_token_name].aleo' into Aleo instructions
 
 ### Test Transfer function
 
-Then, test the transfer function to transfer 25 tokens to another address.
+Then, test the transfer function to transfer 10 tokens to another address.
 
 1. **Run the Transfer Command:**
 
@@ -188,9 +219,9 @@ leo run transfer <recipient's address> 100u64 "<Token Record>"
 ```
 leo run transfer "{
   owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
-  balance: 1500u64.private,
+  balance: 100u64.private,
   _nonce: 639032693423754082364536775069039453230324007423924798412607788930508840691group.public
-}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 100u64
+}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 10u64
 ```
 
 3. **Expected Output:** The output should show two records: one where 25 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
@@ -200,7 +231,7 @@ token_jimito leo run transfer "{
   owner: aleo16l94q9mrfvwddz7mtsla9dsnr6usr580p3tuqu27hff8sfrgcs9s3un3xw.private,
   balance: 100u64.private,
   _nonce: 7866491247063862570923315683237265939712826472158406110725485131341638718073group.public
-}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 25u64
+}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 10u64
        Leo ✅ Compiled 'token_jimito.aleo' into Aleo instructions
 
 ⛓  Constraints
