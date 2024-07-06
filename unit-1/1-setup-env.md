@@ -1,4 +1,4 @@
-# 1. Setup Environment
+# 1. Setting up the environment for development on Aleo Netwrok
 
 ## Install Git and Rust
 
