@@ -25,12 +25,12 @@ Our repo is continuously evolving. Upcoming tasks include completing more advanc
 Aleo is a cutting-edge blockchain platform that prioritizes privacy and scalability for decentralized applications (dApps). By leveraging zero-knowledge proofs, specifically zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge), Aleo enables developers to build secure, private, and efficient applications. Unlike traditional blockchains where transaction details are publicly visible, Aleo ensures that data remains confidential while still allowing the network to validate the correctness of transactions.
 
 Key features of Aleo include:
-
+```
 •    Privacy-Preserving Transactions: Ensures that all transaction details remain confidential, protecting user data from public exposure.
 •    Scalability: Uses advanced cryptographic techniques to maintain high performance and low latency, even as the network grows.
 •    Developer-Friendly: Provides the Leo programming language, designed specifically for writing zero-knowledge applications, making it easier for developers to build on the Aleo platform.
 •    Interoperability: Supports seamless interaction between private and public blockchain states, offering flexibility for a wide range of use cases.
-
+```
 Aleo’s unique approach to privacy and scalability positions it as a leading platform for the next generation of decentralized applications. Whether you’re building financial services, gaming applications, or social networks, Aleo provides the tools and infrastructure needed to create secure and private dApps.
 
 ### Basics
