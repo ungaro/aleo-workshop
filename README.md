@@ -26,10 +26,10 @@ Aleo is a cutting-edge blockchain platform that prioritizes privacy and scalabil
 
 Key features of Aleo include:
 
-• Privacy-Preserving Transactions: Ensures that all transaction details remain confidential, protecting user data from public exposure.
-• Scalability: Uses advanced cryptographic techniques to maintain high performance and low latency, even as the network grows.
-• Developer-Friendly: Provides the Leo programming language, designed specifically for writing zero-knowledge applications, making it easier for developers to build on the Aleo platform.
-• Interoperability: Supports seamless interaction between private and public blockchain states, offering flexibility for a wide range of use cases.
+•    Privacy-Preserving Transactions: Ensures that all transaction details remain confidential, protecting user data from public exposure.
+•    Scalability: Uses advanced cryptographic techniques to maintain high performance and low latency, even as the network grows.
+•    Developer-Friendly: Provides the Leo programming language, designed specifically for writing zero-knowledge applications, making it easier for developers to build on the Aleo platform.
+•    Interoperability: Supports seamless interaction between private and public blockchain states, offering flexibility for a wide range of use cases.
 
 Aleo’s unique approach to privacy and scalability positions it as a leading platform for the next generation of decentralized applications. Whether you’re building financial services, gaming applications, or social networks, Aleo provides the tools and infrastructure needed to create secure and private dApps.
 
