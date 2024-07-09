@@ -44,7 +44,8 @@ Define a mint transition that takes a balance and returns a token record:
 Define a transfer transition that takes a receiver, amount, and token, and returns two token records:
 
 ```
-
+    // The `transfer` function sends the specified number of tokens
+    // to the receiver from the provided token record.
 ```
 
 #### [TASK] (B) Define balance_of function
