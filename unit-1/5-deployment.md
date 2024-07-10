@@ -11,5 +11,5 @@ Follow [this](https://www.leo.app/blog/aleo-faucet) guide from Leo Wallet.
 Once you get your token for your account, deploy using leo cli:
 
 ```bash
-leo deploy --private-key <add your ptovatke key here>
+leo deploy --private-key <add your private key here>
 ```
