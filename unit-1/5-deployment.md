@@ -20,4 +20,4 @@ To find your private key, you'll first need your Leo wallet and then select the 
 
 You wallet view will update and now select `Reveal Private Key`
 
-<img alt="wallettwo" width="800"  src="/images/walletwo.png">
+<img alt="wallettwo" width="800"  src="/images/wallettwo.png">
