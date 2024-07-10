@@ -220,10 +220,10 @@ leo run transfer "{
   owner: aleo1qlw77yxvh0lhzzqxs04yva5uguksfnvtvhknv0taft02tqztyg8qtetkxv.private,
   balance: 100u64.private,
   _nonce: 639032693423754082364536775069039453230324007423924798412607788930508840691group.public
-}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 10u64
+}" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 25u64
 ```
 
-3. **Expected Output:** The output should show two records: one where 25 tokens are owned by the recipient, and the remaining 90 tokens are owned by the original owner.
+3. **Expected Output:** The output should show two records: one where 25 tokens are owned by the recipient, and the remaining 75 tokens are owned by the original owner.
 
 ```
 token_jimito leo run transfer "{
