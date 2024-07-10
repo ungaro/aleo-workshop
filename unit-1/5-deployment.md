@@ -16,3 +16,4 @@ leo deploy --private-key <add your private key here>
 
 To find your private key, you'll first need your Leo wallet and then select the gear button
 
+<img alt="walletone" width="800"  src="/images/walletone.png">
