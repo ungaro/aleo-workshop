@@ -8,8 +8,11 @@ Follow [this](https://www.leo.app/blog/aleo-faucet) guide from Leo Wallet.
 
 ## Deploy
 
-Once you get your token for your account, deploy using leo cli:
+Once you get your token for your account, deploy using leo cli in your projects token_name:
 
 ```bash
 leo deploy --private-key <add your private key here>
 ```
+
+To find your private key, you'll first need your Leo wallet and then select the gear button
+
