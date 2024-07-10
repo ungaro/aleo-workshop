@@ -8,7 +8,7 @@ Step-by-Step Guide for Obtaining Credits:
 ‍
 1. Join the Leo Wallet Discord Server:
 
-First, join the Leo Wallet official Discord server and get verified to access the Faucet Channel.
+First, [join the Leo Wallet official Discord server](https://discord.com/invite/54rdWVf9vz) and get verified to access the Faucet Channel.
 ‍
 
 2. Navigate to the Faucet Channel:
