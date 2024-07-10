@@ -46,6 +46,28 @@ Define a transfer transition that takes a receiver, amount, and token, and retur
 ```
     // The `transfer` function sends the specified number of tokens
     // to the receiver from the provided token record.
+    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
+        // Checks the given token record has sufficient balance.
+        // This `sub` operation is safe, and the proof will fail
+        // if an overflow occurs.
+        // `difference` holds the change amount to be returned to sender.
+        let difference: u64 = token.amount - amount;
+
+        // Produce a token record with the change amount for the sender.
+        let remaining: Token = Token {
+            owner: token.owner,
+            amount: difference,
+        };
+
+        // Produce a token record for the specified receiver.
+        let transferred: Token = Token {
+            owner: to,
+            amount: amount,
+        };
+
+        // Output the sender's change record and the receiver's record.
+        return (remaining, transferred);
+    }
 ```
 
 #### [TASK] (B) Define balance_of function
@@ -53,9 +75,15 @@ Define a transfer transition that takes a receiver, amount, and token, and retur
 Define the code block which returns the balance of a particular owner addresss given the record. Expected ouput balance in u64
 
 ```
-function balance_of(owner_balance: Token) -> u64 {
-    // add your code here
-}
+    transition balance_of(owner_balance: Token) -> u64 {
+        let amount_balance: u64 = owner_balance.amount;
+        let minimun: u64 = 0u64;
+        let return_balance:u64 = 0u64;
+        if amount_balance >= minimun{
+            return_balance = amount_balance;
+        }
+        return return_balance;
+    }
 ```
 
 ### **Final Step: Overview of Your main.leo File**
@@ -83,11 +111,37 @@ program token_jimito.aleo {
 
     // The `transfer` function sends the specified number of tokens
     // to the receiver from the provided token record.
-    
+    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
+        // Checks the given token record has sufficient balance.
+        // This `sub` operation is safe, and the proof will fail
+        // if an overflow occurs.
+        // `difference` holds the change amount to be returned to sender.
+        let difference: u64 = token.amount - amount;
+
+        // Produce a token record with the change amount for the sender.
+        let remaining: Token = Token {
+            owner: token.owner,
+            amount: difference,
+        };
+
+        // Produce a token record for the specified receiver.
+        let transferred: Token = Token {
+            owner: to,
+            amount: amount,
+        };
+
+        // Output the sender's change record and the receiver's record.
+        return (remaining, transferred);
     }
 
-    // The `transition` balance function
-
+    transition balance_of(owner_balance: Token) -> u64 {
+        let amount_balance: u64 = owner_balance.amount;
+        let minimun: u64 = 0u64;
+        let return_balance:u64 = 0u64;
+        if amount_balance >= minimun{
+            return_balance = amount_balance;
+        }
+        return return_balance;
     }
 }
 ```
@@ -178,13 +232,9 @@ token_jimito leo run transfer "{
   _nonce: 7866491247063862570923315683237265939712826472158406110725485131341638718073group.public
 }" aleo19wt5nknak444l0s6raf4h7nsx63j597y6pk3urhc79f43g7u7srsupyqdu 10u64
        Leo ✅ Compiled 'token_jimito.aleo' into Aleo instructions
-
 ⛓  Constraints
-
  •  'token_jimito.aleo/transfer' - 4,107 constraints (called 1 time)
-
 ➡️  Outputs
-
  • {
   owner: aleo16l94q9mrfvwddz7mtsla9dsnr6usr580p3tuqu27hff8sfrgcs9s3un3xw.private,
   balance: 75u64.private,
@@ -195,7 +245,6 @@ token_jimito leo run transfer "{
   balance: 25u64.private,
   _nonce: 1091633311462665956519582503768472411527844165155556863751507107350855060704group.public
 }
-
        Leo ✅ Finished 'token_jimito.aleo/transfer'
 ```
 
