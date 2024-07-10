@@ -9,6 +9,7 @@ For this demo, our desired features are following:
 - **Mint Function:** Able to mint a specific `amount` of `token` to the one who called the mint function.
 - **Transfer Function**: Able to transfer a specific `amount` of the `token` that was minted using the mint function to another user (`recipient`).
 - Ensure you are updating your `main.leo` NOT your `main.aleo`.
+<img alt="main.leo" width="1412" src="/images/main.leo.png">
 
 ### **Step One: Define Your Token Record**
 
