@@ -14,6 +14,10 @@ Once you get your token for your account, deploy using leo cli in your projects 
 leo deploy --private-key <add your private key here>
 ```
 
-To find your private key, you'll first need your Leo wallet and then select the gear button
+To find your private key, you'll first need your Leo wallet and then select the `⚙️` button
 
 <img alt="walletone" width="800"  src="/images/walletone.png">
+
+You wallet view will update and now select `Reveal Private Key`
+
+<img alt="wallettwo" width="800"  src="/images/walletwo.png">
