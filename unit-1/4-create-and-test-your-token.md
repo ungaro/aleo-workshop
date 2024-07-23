@@ -93,7 +93,56 @@ Define the code block which returns the balance of a particular owner addresss g
 This is what your `main.leo` file should look like:
 
 ```
-Write your code here
+# Complete the rest of the transfer function
+program token_jimito.aleo {
+    // The `Token` record datatype.
+    record Token {
+        // The token owner.
+        owner: address,
+        // The token amount.
+        amount: u64,
+    }
+
+    // The `mint` function initializes a new record with the
+    // specified number of tokens assigned to the caller.
+    transition mint(amount: u64) -> Token {
+        return Token {
+            owner: self.caller,
+            amount: amount,
+        };
+    }
+
+    // The `transfer` function sends the specified number of tokens
+    // to the receiver from the provided token record.
+
+        // Checks the given token record has sufficient balance.
+        // This `sub` operation is safe, and the proof will fail
+        // if an overflow occurs.
+        // `difference` holds the change amount to be returned to sender.
+
+
+        // Produce a token record with the change amount for the sender.
+
+        };
+
+        // Produce a token record for the specified receiver.
+
+        };
+
+        // Output the sender's change record and the receiver's record.
+
+    }
+
+    transition balance_of(owner_balance: Token) -> u64 {
+        let amount_balance: u64 = owner_balance.amount;
+        let minimun: u64 = 0u64;
+        let return_balance:u64 = 0u64;
+        if amount_balance >= minimun{
+            return_balance = amount_balance;
+        }
+        return return_balance;
+    }
+}
 ```
 
 ## Test Program
