@@ -93,7 +93,6 @@ Define the code block which returns the balance of a particular owner addresss g
 This is what your `main.leo` file should look like:
 
 ```
-# Complete the rest of the transfer function
 program token_jimito.aleo {
     // The `Token` record datatype.
     record Token {
@@ -114,23 +113,27 @@ program token_jimito.aleo {
 
     // The `transfer` function sends the specified number of tokens
     // to the receiver from the provided token record.
-
+    transition transfer(token: Token, to: address, amount: u64) -> (Token, Token) {
         // Checks the given token record has sufficient balance.
         // This `sub` operation is safe, and the proof will fail
         // if an overflow occurs.
         // `difference` holds the change amount to be returned to sender.
-
+        let difference: u64 = token.amount - amount;
 
         // Produce a token record with the change amount for the sender.
-
+        let remaining: Token = Token {
+            owner: token.owner,
+            amount: difference,
         };
 
         // Produce a token record for the specified receiver.
-
+        let transferred: Token = Token {
+            owner: to,
+            amount: amount,
         };
 
         // Output the sender's change record and the receiver's record.
-
+        return (remaining, transferred);
     }
 
     transition balance_of(owner_balance: Token) -> u64 {
