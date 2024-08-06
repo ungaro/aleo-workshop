@@ -206,7 +206,7 @@ Leo ✅ Compiled '[your_token_name].aleo' into Aleo instructions
 
 ### Test Transfer function
 
-Then, test the transfer function to transfer 10 tokens to another address.
+Then, test the transfer function to transfer 25 tokens to another address.
 
 1. **Run the Transfer Command:**
 
